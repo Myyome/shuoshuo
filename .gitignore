@@ -1,5 +1,4 @@
 node_modules
 db
 public/node_modules
-/touxiang
-/upload
+touxiang/*.jpeg
