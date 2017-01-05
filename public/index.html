@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>说说</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="node_modules/bootstrap/dist/css/jumbotron.css" rel="stylesheet">
+    <link rel="stylesheet" href="Jcrop-0.9.12/css/jquery.Jcrop.min.css">
+    <link rel="stylesheet" href="comments.css">
+    <style type="text/css">
+   
+    #regist .alert{
+      margin-top: 25px;
+      margin-bottom: 0;
+      padding:0;
+      padding:6px 0;
+    }
+    #preview-pane .preview-container {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+}
+#preview-pane {
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  top: 10px;
+  right: -280px;
+  padding: 6px;
+  border: 1px rgba(0,0,0,.4) solid;
+  background-color: white;
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+    </style>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  </head>
+
+  <body ng-app="myApp">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">测试</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">主页</a></li>
+            <li><a href="#about">所有说说</a></li>
+            <li><a href="#contact">我的说说</a></li>
+          </ul>
+            <div  ui-view="chart"></div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div style="padding-top: 50px;">
+      <ui-view></ui-view>
+    </div>
+      <footer class="container" style="padding-top: 50px">
+        <p>&copy; Company 2016</p>
+      </footer>
+    </div> <!-- /container -->
+        </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/app.js"></script>
+    <script src="js/allRouter.js"></script>
+
+    <script src="js/commRouter.js"></script>
+    <script src="js/commController.js"></script>
+    <script src="js/commServer.js"></script>
+
+    <script src="area/regist/router.js"></script>
+    <script src="area/regist/registController.js"></script>
+    <script src="area/regist/server.js"></script>
+
+    <script src="area/login/router.js"></script>
+    <script src="area/login/loginController.js"></script>
+    <script src="area/login/server.js"></script>
+
+    <script src="area/home/router.js"></script>
+    <script src="area/home/homeController.js"></script>
+    <script src="area/home/server.js"></script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="Jcrop-0.9.12/js/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="area/home/homeDirective.js"></script>
+  </body>
+</html>

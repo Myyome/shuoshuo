@@ -1,0 +1,20 @@
+<div class="container" id="regist">
+  <h1>注册</h1>
+  <form role="form" class="col-sm-3">
+    <div class="form-group">
+      <label for="exampleInputEmail1">用户名</label>
+      <input ng-model="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="邮箱，中文，手机" ng-blur="repeatUser()">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">密码</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="6位以上" ng-model="password">
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> 同意协议
+      </label>
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="regist()">注册</button>
+  </form>
+  <div ng-if="alertBox" ng-class="{'alert-success':success,'alert-danger':danger}" class="alert col-sm-2 text-center" role="alert">{{text}}</div>
+</div>

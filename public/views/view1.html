@@ -1,0 +1,8 @@
+ <ul class="nav navbar-nav navbar-right" ng-if="nonesession">
+	 <li class="pull-right"><a href="#!/regist">注册</a></li>
+	 <li class="pull-right"><a href="#!/login">登录</a></li>
+ </ul>
+  <ul class="nav navbar-nav navbar-right" ng-if="session">
+  	<li class="pull-right"><a href="/logout">退出登录</a></li>
+	 <li class="pull-right"><a href="#contact">欢迎 {{username}} 用户 !!!</a></li>
+ </ul>

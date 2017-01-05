@@ -1,0 +1,98 @@
+<div class="container" id="home">
+  <div class="media" ng-if="Login">
+    <a class="media-left" href="" data-toggle="modal" data-target="#myModal">
+      <img ng-src="{{imgSrc}}" title="点击修改头像" style="border:2px solid green;padding: 1px;width: 156px;height: 156px;" >
+    </a>
+    <div class="media-body" style="padding-left: 50px;">
+      <h3 class="media-heading" style="margin-bottom: 10px;">发表留言</h3>
+      <textarea ng-model="sendData.textarea" class="form-control" rows="3" col-xs-4 style="width: 600px;margin-bottom: 10px;"></textarea>
+      <button class="btn btn-success" type="button" ng-click="fabiao()">发表</button>
+    </div>
+  </div>
+  <hr />
+  <section class="comments">
+    <article class="comment" ng-repeat="liuyanContent in liuyanContentArry">
+      <a class="comment-img" href="#non">
+        <img ng-src="{{liuyanContent.touxiang}}" alt="" width="50" height="50">
+      </a>
+      <div class="comment-body">
+        <div class="text">
+          <p>{{liuyanContent.Content}}</p>
+        </div>
+        <p class="attribution"><span>{{liuyanContent.username}}</span><a jiou="0" ng-click="hid($event)" href="javascript:void(0);"> 回复</a> {{liuyanContent.date}} <span class="_id" ng-show="false">{{liuyanContent._id}}</span></p>
+        <div class="comment-con" ng-repeat="itemCommment in liuyanContent.comments">
+          <a class="comment-img" href="#non">
+            <img ng-src="{{itemCommment.touxiang}}" alt="" width="30" height="30">
+          </a>
+          <div class="text">
+            <p>{{itemCommment.Content}}</p>
+          </div>
+          <p class="attribution"><span>{{itemCommment.username}}</span><a jiou="0" ng-click="hid2($event)" href="javascript:void(0);"> 回复</a> {{itemCommment.date}} <span ng-show="false">{{itemCommment._id}}</span></p>
+        </div>
+        <div class="comment-nei">
+          <a class="comment-img" href="#non">
+            <img ng-src="{{imgSrc}}" alt="" width="50" height="50">
+          </a>
+          <textarea class="ipt-txt" rows="3" cols="70" ng-model="comment.Content"></textarea>
+          <button type="button" class="btn btn-success" ng-click="huifu()">回复</button>
+        </div>
+      </div>
+    </article>
+  </section>
+  <div class="jumbotron" ng-if="!Login" style="padding-bottom: 0;padding-top: 0;height:331px;background-color:#f3eee9;;">
+    <div class="row">
+      <div class="col-xs-6" style="padding-top: 20px;">
+        <h2>欢迎注册</h2>
+        <p style="margin-top: 50px;">我的说说论坛</p>
+        <p style="margin-top: 50px;"><a class="btn btn-primary btn-lg" href="#!/regist" role="button">注册</a></p>
+      </div>
+      <div class="col-xs-6">
+        <div>
+          <h2>登录</h2>
+          <form role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">用户名</label>
+              <input ng-model="sendData.username" type="text" class="form-control" id="exampleInputEmail1" placeholder="邮箱，中文，手机" ng-focus="closeBox()">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">密码</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="6位以上" ng-model="sendData.password">
+            </div>
+            <button type="button" class="btn btn-success" ng-click="login()">登录</button>
+            <div ng-if="alertBox" class="alert text-center alert-danger" role="alert" style="margin-bottom: 0;margin-top: 10px;">{{text}}</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"
+        data-dismiss="modal" aria-hidden="true">
+        &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+        修改头像
+        </h4>
+      </div>
+      <div class="modal-body">
+        <form action="" style="padding-bottom: 10px;">
+          <input id="file" type="file" onchange="angular.element(this).scope().img_upload(this.files)"/>
+        </form>
+        <home-directive></home-directive>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"
+          data-dismiss="modal">关闭
+          </button>
+          <button type="button" class="btn btn-primary" ng-click="cut(imgPath)">
+          确认裁剪
+          </button>
+        </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal
+    </div>
